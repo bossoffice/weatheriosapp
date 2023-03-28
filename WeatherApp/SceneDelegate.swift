@@ -20,24 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         //        weather app
-        let rootVC = UIStoryboard(name: "Weather", bundle: nil).instantiateInitialViewController()!
-        let navigationVC = UINavigationController(rootViewController: rootVC)
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        var appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = textAttributes
-        navigationVC.navigationBar.scrollEdgeAppearance = appearance
-        navigationVC.navigationBar.compactAppearance = appearance
-        navigationVC.navigationBar.standardAppearance = appearance
-        navigationVC.navigationBar.compactScrollEdgeAppearance = appearance
+//        let rootVC = UIStoryboard(name: "Weather", bundle: nil).instantiateInitialViewController()!
+//        let navigationVC = UINavigationController(rootViewController: rootVC)
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+//        var appearance = UINavigationBarAppearance()
+//        appearance.backgroundColor = .white
+//        appearance.titleTextAttributes = textAttributes
+//        navigationVC.navigationBar.scrollEdgeAppearance = appearance
+//        navigationVC.navigationBar.compactAppearance = appearance
+//        navigationVC.navigationBar.standardAppearance = appearance
+//        navigationVC.navigationBar.compactScrollEdgeAppearance = appearance
 
         
-        //      cinemo app
-//        let rootVC = UIStoryboard(name: "Cinemo", bundle: nil).instantiateInitialViewController()!
-//        let navigationVC = UINavigationController(rootViewController: rootVC)
-//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
-//        navigationVC.navigationBar.titleTextAttributes = textAttributes
-//        navigationVC.navigationBar.backgroundColor = .black
+//              cinemo app
+        let rootVC = UIStoryboard(name: "Cinemo", bundle: nil).instantiateInitialViewController()!
+        let navigationVC = UINavigationController(rootViewController: rootVC)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
+        navigationVC.navigationBar.titleTextAttributes = textAttributes
+        navigationVC.navigationBar.backgroundColor = .black
 
         
         window?.rootViewController = navigationVC

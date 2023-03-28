@@ -13,7 +13,6 @@ class CinemoViewController: BaseViewController {
     var page = 0
     var itemPerPage = 10
     var movieListItem: [MovieElement] = []
-//    var renderItem: [MovieElement] = []
     lazy var renderItem: [MovieElement] = {
       return []
     }()
@@ -124,9 +123,12 @@ extension CinemoViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as! MovieTableViewCell
         let item = renderItem[indexPath.row]
         cell.selectionStyle = .none
+        cell.typeMovieLabel.text = item.genre ?? ""
+        cell.movieNameLabel.text = item.titleEn ?? ""
+        var  date = convertToDate(str: item.releaseDate ?? "", format: .short)!
+        var stringDate = convertToString(date: date,format: .movieRelease)
+        cell.firstDataIncinemaLabel.text = stringDate
         cell.movieImage?.loadImage(url: item.posterURL ?? "")
-        cell.movieImage?.clipsToBounds = true
-        cell.movieImage?.contentMode = .scaleAspectFill
         return cell
     }
 }

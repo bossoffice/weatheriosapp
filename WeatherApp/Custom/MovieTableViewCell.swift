@@ -22,10 +22,9 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     func setupLabel() {
-        typeMovieLabel.font = UIFont.boldSystemFont(ofSize: 13)
-        movieNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        movieNameLabel.font = UIFont.systemFont(ofSize: 14)
-        movieImage?.applyRound()
+        movieImage.applyRound()
+        movieImage.clipsToBounds = true
+        movieImage.contentMode = .scaleAspectFill
         bgView?.applyRound()
     }
 

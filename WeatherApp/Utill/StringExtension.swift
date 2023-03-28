@@ -12,6 +12,7 @@ enum FormatDateTime: String {
     case normal = "yyyy-MM-dd HH:mm:ss"
     case short = "yyyy-MM-dd"
     case shortTime = "HH:mm"
+    case movieRelease = "MMMM d, yyyy"
 }
 
 func convertToDate(str: String ,format: FormatDateTime = .normal) -> Date? {
@@ -26,6 +27,7 @@ func convertToString(date: Date ,format: FormatDateTime = .normal) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = format.rawValue
     formatter.timeZone = TimeZone(abbreviation: "UTC")
+    formatter.locale = Locale(identifier: "EN")
     let returnValue = formatter.string(from: date)
     return returnValue
 }
